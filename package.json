@@ -11,6 +11,7 @@
   "dependencies": {
     "react": "0.0.0-experimental-f83903bf-20250212",
     "react-dom": "0.0.0-experimental-f83903bf-20250212",
+    "react-router": "^7.1.5",
     "reset-css": "^5.0.2"
   },
   "devDependencies": {
