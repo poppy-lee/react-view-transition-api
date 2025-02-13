@@ -1,4 +1,4 @@
-## Test repository for using react@19 `use()` hook
+## Test repository for using react `<ViewTransition />` component
 
 | scripts         |                                           |
 | --------------- | ----------------------------------------- |
