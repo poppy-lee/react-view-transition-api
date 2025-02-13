@@ -8,7 +8,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jsx?|tsx?)$/,
+        test: /\.(jsx?|tsx?)$/i,
         use: {
           loader: "babel-loader",
           options: {
@@ -19,6 +19,10 @@ module.exports = {
             ],
           },
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
