@@ -1,0 +1,28 @@
+{
+  "name": "react-view-transition-api",
+  "description": "try <ViewTransition /> component",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "react": "0.0.0-experimental-f83903bf-20250212",
+    "react-dom": "0.0.0-experimental-f83903bf-20250212"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.8",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "babel-loader": "^9.2.1",
+    "html-webpack-plugin": "^5.6.3",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
