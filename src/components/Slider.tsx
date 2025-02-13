@@ -11,20 +11,20 @@ export function Slider() {
   return (
     <article style={sliderContainerStyle}>
       <section style={sliderListContainerStyle}>
-        <ViewTransition>
-          <ul
-            style={{
-              ...sliderListStyle,
-              transform: `translate(${page * -300}px, 0px)`,
-            }}
-          >
+        <ul
+          style={{
+            ...sliderListStyle,
+            transform: `translate(${page * -300}px, 0px)`,
+          }}
+        >
+          <ViewTransition>
             <li style={sliderListItemStyle}>1</li>
             <li style={sliderListItemStyle}>2</li>
             <li style={sliderListItemStyle}>3</li>
             <li style={sliderListItemStyle}>4</li>
             <li style={sliderListItemStyle}>5</li>
-          </ul>
-        </ViewTransition>
+          </ViewTransition>
+        </ul>
       </section>
       <nav>
         <button
@@ -72,6 +72,8 @@ const sliderListStyle: CSSProperties = {
 const sliderListItemStyle: CSSProperties = {
   display: "flex",
   flexShrink: 0,
+  alignItems: "center",
+  justifyContent: "center",
   width: 300,
   height: 300,
   boxSizing: "border-box",
