@@ -1,47 +1,5 @@
-import { CSSProperties, startTransition, useState } from "react";
-
-import { Slider } from "./components/Slider";
-import { ToggleButton } from "./components/ToggleButton";
+import { Home } from "./pages/Home";
 
 export const App = () => {
-  const [checked, setChecekd] = useState(true);
-
-  return (
-    <div style={appContainerStyle}>
-      <label>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={(event) => {
-            setChecekd(event.target.checked);
-          }}
-        />
-        external state change
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={(event) => {
-            startTransition(() => {
-              setChecekd(event.target.checked);
-            });
-          }}
-        />
-        external state change with startTransition()
-      </label>
-      <ToggleButton checked={checked} onChange={setChecekd} />
-
-      <Slider />
-    </div>
-  );
-};
-const appContainerStyle: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  flex: 1,
-  alignItems: "center",
-  justifyContent: "center",
-  gap: 10,
-  overflow: "hidden",
+  return <Home />;
 };
