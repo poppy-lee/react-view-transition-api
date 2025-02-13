@@ -1,5 +1,6 @@
 import { CSSProperties, startTransition, useState } from "react";
 
+import { Slider } from "./components/Slider";
 import { ToggleButton } from "./components/ToggleButton";
 
 export const App = () => {
@@ -30,6 +31,8 @@ export const App = () => {
         external state change with startTransition()
       </label>
       <ToggleButton checked={checked} onChange={setChecekd} />
+
+      <Slider />
     </div>
   );
 };
@@ -40,4 +43,5 @@ const appContainerStyle: CSSProperties = {
   alignItems: "center",
   justifyContent: "center",
   gap: 10,
+  overflow: "hidden",
 };
