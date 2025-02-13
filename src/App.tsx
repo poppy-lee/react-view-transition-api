@@ -30,23 +30,27 @@ function Button() {
   };
 
   return (
-    <button
-      style={{
-        ...buttonContainerStyle,
-        justifyContent: "flex-" + (isOn ? "end" : "start"),
-        backgroundColor: isOn ? "rgba(255, 0, 0, 0.1)" : "rgba(0, 0, 0, 0.1)",
-      }}
-      onClick={handleClickButton}
-    >
-      <ViewTransition>
-        <div
-          style={{
-            ...buttonHandleStyle,
-            backgroundColor: isOn ? "red" : "black",
-          }}
-        />
-      </ViewTransition>
-    </button>
+    <ViewTransition>
+      <button
+        style={{
+          ...buttonContainerStyle,
+          justifyContent: "flex-" + (isOn ? "end" : "start"),
+          backgroundColor: isOn
+            ? "rgba(0, 255, 0, 0.15)"
+            : "rgba(0, 0, 0, 0.1)",
+        }}
+        onClick={handleClickButton}
+      >
+        <ViewTransition>
+          <div
+            style={{
+              ...buttonHandleStyle,
+              backgroundColor: isOn ? "green" : "black",
+            }}
+          />
+        </ViewTransition>
+      </button>
+    </ViewTransition>
   );
 }
 const buttonContainerStyle: CSSProperties = {
