@@ -4,3 +4,5 @@
 | --------------- | ----------------------------------------- |
 | `npm start`     | run dev server on `http://localhost:8080` |
 | `npm run build` | build files into `/dist/`                 |
+
+https://motion.dev/blog/reacts-experimental-view-transition-api
