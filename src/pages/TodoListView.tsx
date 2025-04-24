@@ -1,3 +1,7 @@
+import {
+  useDeferredValue,
+  unstable_ViewTransition as ViewTransition,
+} from "react";
 import { useMemo, useState } from "react";
 
 import { Todo } from "../types/Todo";
@@ -19,8 +23,10 @@ export const TodoListView = () => {
     [filter, todos]
   );
 
+  const deferredVisibleTodos = useDeferredValue(visibleTodos);
+
   return (
-    <>
+    <ViewTransition>
       <TodoListHeaderView
         onSubmit={(todoTitle) => {
           setTodos((todos) => [
@@ -30,7 +36,7 @@ export const TodoListView = () => {
         }}
       />
       <TodoListMainView
-        visibleTodos={visibleTodos}
+        visibleTodos={deferredVisibleTodos}
         toggleAllTodos={() => {
           setTodos((todos) => {
             const completed = !todos.every((todo) => todo.completed);
@@ -51,13 +57,15 @@ export const TodoListView = () => {
         }}
       />
       <TodoListFooterView
-        todos={visibleTodos}
+        todos={todos}
         filter={filter}
-        onChangeFilter={(filter) => setFilter(filter)}
+        onChangeFilter={(filter) => {
+          setFilter(filter);
+        }}
         removeCompletedTodos={() => {
           setTodos((todos) => todos.filter((todo) => !todo.completed));
         }}
       />
-    </>
+    </ViewTransition>
   );
 };
