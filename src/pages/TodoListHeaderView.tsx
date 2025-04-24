@@ -1,8 +1,11 @@
-export const TodoListHeaderView = () => {
+export const TodoListHeaderView = ({
+  onSubmit,
+}: {
+  onSubmit: (todoTitle: string) => void;
+}) => {
   return (
     <header className="header" data-testid="header">
       <h1>todos</h1>
-      {/* <Input /> */}
       <div className="input-container">
         <input
           className="new-todo"
@@ -10,10 +13,15 @@ export const TodoListHeaderView = () => {
           type="text"
           data-testid="text-input"
           autoFocus
-          placeholder={"What needs to be done?"}
-          // defaultValue={defaultValue}
-          // onBlur={handleBlur}
-          // onKeyDown={handleKeyDown}
+          placeholder="What needs to be done?"
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              const todoTitle = event.currentTarget.value.trim();
+              if (!todoTitle) return;
+              onSubmit(todoTitle);
+              event.currentTarget.value = "";
+            }
+          }}
         />
       </div>
     </header>
