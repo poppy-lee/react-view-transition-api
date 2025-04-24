@@ -11,7 +11,8 @@
   "dependencies": {
     "react": "^0.0.0-experimental-914319ae-20250423",
     "react-dom": "^0.0.0-experimental-914319ae-20250423",
-    "reset-css": "^5.0.2"
+    "todomvc-app-css": "^2.4.3",
+    "todomvc-common": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.26.8",
